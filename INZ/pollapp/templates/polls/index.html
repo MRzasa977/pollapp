@@ -1,0 +1,19 @@
+<body>
+    <nav class="navbar mynav" role='navigation' id="navbar">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'pollapp:createdPolls' %}">Polls</a> </li>
+                    <li><a href="{% url 'pollapp:createPoll' %}">Create Poll</a></li>
+                    <li><a href="{% url 'pollapp:userPolls' %}">My Polls</a> </li>
+                    <li><a href="{% url 'logout' %}">Log Out</a> </li>
+                {% else %}
+                    <li><a href="{% url 'pollapp:login' %}">Log In</a> </li>
+                    <li><a href="{% url 'pollapp:signup' %}">Sign Up</a> </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</body>
+
+

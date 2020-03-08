@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fabd77e4-860d-4f45-a89d-447473317404" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Y0GBR2m8UpfXK9f8PL84EAuK4p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\conda\INZ\pollapp\templates\registration" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fabd77e4-860d-4f45-a89d-447473317404" name="Default Changelist" comment="" />
+      <created>1582071961378</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582071961378</updated>
+      <workItem from="1582158234269" duration="2626000" />
+      <workItem from="1582470229638" duration="2828000" />
+      <workItem from="1582481505575" duration="3618000" />
+      <workItem from="1582582442122" duration="6481000" />
+      <workItem from="1582658457830" duration="5473000" />
+      <workItem from="1582668349854" duration="692000" />
+      <workItem from="1582728810278" duration="2503000" />
+      <workItem from="1582751800706" duration="3032000" />
+      <workItem from="1582758743997" duration="1339000" />
+      <workItem from="1582838080378" duration="2426000" />
+      <workItem from="1582840758497" duration="1341000" />
+      <workItem from="1582842552771" duration="1877000" />
+      <workItem from="1582923437822" duration="2274000" />
+      <workItem from="1583246279902" duration="4745000" />
+      <workItem from="1583351172800" duration="907000" />
+      <workItem from="1583357189909" duration="435000" />
+      <workItem from="1583438345616" duration="2171000" />
+      <workItem from="1583490054349" duration="1205000" />
+      <workItem from="1583535043378" duration="749000" />
+      <workItem from="1583585135791" duration="5410000" />
+      <workItem from="1583661189811" duration="699000" />
+      <workItem from="1583670461854" duration="1721000" />
+      <workItem from="1583696915010" duration="7995000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1032" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582587427707">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582587427707" />
+    <state x="1184" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582583801556">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1184" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582583801556" />
+    <state x="1220" y="275" key="FileChooserDialogImpl" timestamp="1582839262703">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1220" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582839262703" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1582587406773">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582587406773" />
+    <state x="922" y="166" key="SettingsEditor" timestamp="1582481987645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="922" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582481987645" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583696921431">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1583535041967" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583696921431" />
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1582583259359">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582583259359" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/INZ/pollapp/forms.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/INZ/pollapp/templates/polls/createChoice.html</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
