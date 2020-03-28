@@ -10,8 +10,10 @@
 
 <div class="container">
     <h1>Create Poll</h1>
-    {% for choice_field in form.get_choice_fields %}
-    {{ choice_field }}
-       {% endfor %}
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" name="" class="btn btn-default" value="Create Poll">
+    </form>
 </div>
 {% endblock %}

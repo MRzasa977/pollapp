@@ -1,0 +1,10 @@
+<h1>{{ question.question_text }}</h1>
+{% if question.author %}
+<p>Author: {{ question.author }}</p>
+{% endif %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    {% for choice in question.choice_set.all %}
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    {% endfor %}
+    <input type="submit" value="vote">

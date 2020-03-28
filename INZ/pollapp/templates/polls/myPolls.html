@@ -1,7 +1,7 @@
 {% if user_questions_list %}
     <ul>
     {% for question in user_questions_list %}
-        <li><a href="{% url 'pollapp:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li><a href="{% url 'pollapp:results' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

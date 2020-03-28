@@ -3,13 +3,15 @@ from django.shortcuts import get_object_or_404, render, redirect, render_to_resp
 from django.urls import reverse, reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms.models import modelformset_factory
 
-from .forms import CreateChoiceForm
+# from .forms import CreateChoiceForm
 from.models import Question
 from django.utils import timezone
 
 from .models import Choice, Question
 from . import forms
+
 
 # Create your views here.
 
@@ -27,9 +29,15 @@ class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
 
+class UserDetailPollView(generic.DetailView):
+    model = Question
+    template_name = 'polls/UserDetailPoll.html'
+
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
+
+
 
 class UserPolls(LoginRequiredMixin,generic.ListView):
     template_name = 'polls/myPolls.html'
@@ -52,6 +60,7 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
+
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
@@ -63,30 +72,30 @@ class SignUp(generic.CreateView):
     template_name = 'registration/signup.html'
 
 class CreatePoll(LoginRequiredMixin, generic.CreateView):
-    form_class = forms.CreateChoiceForm
+    form_class = forms.CreatePollForm
     template_name = 'polls/createPoll.html'
-    success_url = reverse_lazy('pollapp:index')
 
-    # def form_valid(self, form):
-    #     self.object = poll = form.save(commit=False)
-    #     poll.author = self.request.user
-    #     poll.save()
-    #     return super().form_valid(form)
 
-    def get_form_kwargs(self):
-        kwargs = super(CreatePoll, self).get_form_kwargs()
-        kwargs.update({'request': self.request})
-        return kwargs
+    def form_valid(self, form):
+        self.object = poll = form.save(commit=False)
+        poll.author = self.request.user
+        poll.save()
+        return super().form_valid(form)
 
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-        form.request = self.request
-        return form
+    # def get_form_kwargs(self):
+    #     kwargs = super(CreatePoll, self).get_form_kwargs()
+    #     kwargs.update({'request': self.request})
+    #     return kwargs
+
+    # def get_form(self, form_class=None):
+    #     form = super().get_form(form_class)
+    #     form.request = self.request
+    #     return form
 
     def get_success_url(self):
-        return reverse('pollapp:userPolls')
+        return reverse('pollapp:createChoice', kwargs={ "pk": self.object.pk })
         # return reverse('pollapp:index')
-# class CreateChoicePoll(LoginRequiredMixin, generic.CreateView):
+# class CreateChoicePoll(LoginRequiredMixin, generic.FormView):
 #     form_class = forms.CreateChoiceForm
 #     model = Choice
 #     template_name = 'polls/createChoice.html'
@@ -103,6 +112,11 @@ class CreatePoll(LoginRequiredMixin, generic.CreateView):
 #     #         return redirect('pollapp:index')
 #     #     args = {'form': form}
 #     #     return render(request, self.template_name, args)
+#     def get_form_kwargs(self):
+#         kwargs = super(CreateChoicePoll, self).get_form_kwargs()
+#         kwargs.update({'extra': self.request.POST.get('extra_field_count')})
+#         return kwargs
+#
 #     def form_valid(self, form):
 #         post = get_object_or_404(Question, pk=pk)
 #         choice = form.save(commit=False)
@@ -110,18 +124,31 @@ class CreatePoll(LoginRequiredMixin, generic.CreateView):
 #         choice.save()
 #         return super().form_valid(form)
 
+# def createChoice(request, pk):
+#     question = get_object_or_404(Question, pk=pk)
+#     if request.method == 'POST':
+#         form = CreateChoiceForm(request.POST)
+#         if form.is_valid():
+#             choice = form.save(commit=False)
+#             choice.question = question
+#             choice.save()
+#             return redirect('pollapp:detail', pk=question.pk)
+#     else:
+#         form = CreateChoiceForm()
+#     return render(request, 'polls/createChoice.html', {'form': form})
+
 def createChoice(request, pk):
     question = get_object_or_404(Question, pk=pk)
-    if request.method =='POST':
-        form = CreateChoiceForm(request.POST)
-        if form.is_valid():
-            choice = form.save(commit=False)
-            choice.question = question
-            choice.save()
-            return redirect('pollapp:detail', pk=question.pk)
+    ChoiceFormSet = modelformset_factory(Choice, fields=('choice_text',))
+    if request.method == 'POST':
+        formset = ChoiceFormSet(request.POST, queryset=Choice.objects.filter(question__id=question.id))
+        if formset.is_valid():
+            instances = formset.save(commit=False)
+            for instance in instances:
+                instance.question_id = question.id
+                instance.save()
     else:
-        form = CreateChoiceForm()
-    return render(request, 'polls/createChoice.html', {'form': form})
+        formset = ChoiceFormSet(queryset=Choice.objects.filter(question__id=question.id))
 
-
-
+    print ("Questions:", (Choice.objects.all()))
+    return render(request, 'polls/createChoice.html', {'formset': formset})
