@@ -8,6 +8,7 @@
                     <li><a href="{% url 'pollapp:userPolls' %}">My Polls</a> </li>
                     <li><a href="{% url 'logout' %}">Log Out</a> </li>
                 {% else %}
+                    <li><a href="{% url 'pollapp:createdPolls' %}">Polls</a> </li>
                     <li><a href="{% url 'pollapp:login' %}">Log In</a> </li>
                     <li><a href="{% url 'pollapp:signup' %}">Sign Up</a> </li>
                 {% endif %}

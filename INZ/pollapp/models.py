@@ -9,8 +9,6 @@ User = auth.get_user_model()
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
-
-
     def __str__(self):
         return self.question_text
 
@@ -25,3 +23,10 @@ class User(auth.models.User, auth.models.PermissionsMixin):
 
     def __str__(self):
         return "@{}".format(self.username)
+
+class Votes_ip(models.Model):
+    client_ip = models.GenericIPAddressField()
+    voted_question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.client_ip

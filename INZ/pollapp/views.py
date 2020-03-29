@@ -4,12 +4,12 @@ from django.urls import reverse, reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms.models import modelformset_factory
-
+from ipware import get_client_ip
 # from .forms import CreateChoiceForm
 from.models import Question
 from django.utils import timezone
 
-from .models import Choice, Question
+from .models import Choice, Question, Votes_ip
 from . import forms
 
 
@@ -58,8 +58,19 @@ def vote(request, question_id):
             'error_message': "You didn't select a choice.",
         })
     else:
+        ip = get_client_ip(request)
+        try:
+            Votes_ip.objects.get(client_ip=ip, voted_question = question)
+            return render(request, 'polls/detail.html', {
+                'question': question,
+                'error_message': "You have already voted on this poll."
+            })
+        except Votes_ip.DoesNotExist:  # -----Here My Edit
+            ip_address = Votes_ip(client_ip=ip, voted_question = question)
+            ip_address.save()
         selected_choice.votes += 1
         selected_choice.save()
+        print("IP:", Votes_ip.objects.all())
 
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
