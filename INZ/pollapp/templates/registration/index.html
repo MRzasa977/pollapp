@@ -7,17 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="createChoice.js"></script>
-    <script type="text/javascript">
-        function empty() {
-    var x;
-    x = document.getElementById("roll-input").value;
-    if (x == "") {
-        alert("Enter a Valid Roll Number");
-        return false;
-    };
-}
-    </script>
+
     <style>
         .navbar-nav {
     flex-direction: row;
@@ -51,37 +41,8 @@
             justify-content: center;
         }
         .button {
-
+            background-color: #cccccc;
             float: right;
-            padding-top: 8px
-        }
-        .form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-}
-        .main-page{
-            text-align: center;
-            padding-top: 200px;
-        }
-        .main-text{
-            font-size: 50px;
         }
 
     </style>
@@ -91,11 +52,11 @@
     <nav class="navbar navbar-inverse" role='navigation' id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'pollapp:index' %}">WebSiteName</a>
+                <a class="navbar-brand" href="#">WebSiteName</a>
             </div>
             <ul class="nav navbar-nav">
                 {% if user.is_authenticated %}
-                    <li class="active"><a href="{% url 'pollapp:index' %}">Home</a></li>
+                    <li class="active"><a href="pollapp:index">Home</a></li>
                     <li><a href="{% url 'pollapp:createdPolls' %}">Polls</a> </li>
                     <li><a href="{% url 'pollapp:createPoll' %}">Create Poll</a></li>
                     <li><a href="{% url 'pollapp:userPolls' %}">My Polls</a> </li>
@@ -116,10 +77,6 @@
         </div>
     </nav>
 {% block content %}
-    <div class="container main-page">
-        <span class="main-text">You can </span><a href="{% url 'pollapp:createPoll' %}" class="main-text">create Poll</a><span class="main-text"> here.</span>
-
-    </div>
 {% endblock %}
 </body>
 

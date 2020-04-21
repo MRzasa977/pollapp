@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fabd77e4-860d-4f45-a89d-447473317404" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createChoice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/.idea/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/INZ/pollapp/templates/registration/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INZ/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/INZ/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/INZ/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/INZ/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/INZ/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/INZ/pollapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createChoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createChoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createChoice.js" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createChoice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createPoll.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createdPolls.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/createdPolls.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/myPolls.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/myPolls.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/polls/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/polls/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INZ/pollapp/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/templates/registration/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/INZ/pollapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/INZ/pollapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo" />
+    <property name="last_opened_file_path" value="G:/Blog_Clone_Project" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -70,6 +79,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\conda\INZ\pollapp\templates\registration" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\conda\INZ\pollapp\templates\registration" />
     </key>
@@ -113,6 +125,12 @@
       <workItem from="1584525834181" duration="1381000" />
       <workItem from="1584534441049" duration="2333000" />
       <workItem from="1584613256539" duration="4542000" />
+      <workItem from="1586860927591" duration="4038000" />
+      <workItem from="1587127946519" duration="666000" />
+      <workItem from="1587239885191" duration="4156000" />
+      <workItem from="1587324234695" duration="2920000" />
+      <workItem from="1587411661191" duration="7369000" />
+      <workItem from="1587504463262" duration="1569000" />
     </task>
     <servers />
   </component>
@@ -128,10 +146,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1184" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582583801556" />
-    <state x="1220" y="275" key="FileChooserDialogImpl" timestamp="1584613887794">
+    <state x="1220" y="275" key="FileChooserDialogImpl" timestamp="1587505825022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1584613887794" />
+    <state x="1220" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587505825022" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1582587406773">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -140,11 +159,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="922" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1582481987645" />
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584613295667">
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587504496620">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1584613295667" />
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583848997956" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587504496620" />
     <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1582583259359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

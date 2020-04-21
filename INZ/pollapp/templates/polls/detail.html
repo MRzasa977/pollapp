@@ -1,14 +1,55 @@
+{% extends 'polls/index.html' %}
 <h1>{{ question.question_text }}</h1>
 {% if question.author %}
 <p>Author: {{ question.author }}</p>
 {% endif %}
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% block content %}
+<div class="container">
 
-<form action="{% url 'pollapp:vote' question.id %}" method="post">
+    <div class="row">
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row">
+{#            <form action="{% url 'pollapp:vote' question.id %}" method="post">#}
+{#    {% csrf_token %}#}
+{#    {% for choice in question.choice_set.all %}#}
+{#    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">#}
+{#    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>#}
+{#    {% endfor %}#}
+{#    <input type="submit" value="vote" />#}
+{#            </form>#}
+    <form action="{% url 'pollapp:vote' question.id %}" method="post">
     {% csrf_token %}
-    {% for choice in question.choice_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
-    {% endfor %}
-    <input type="submit" value="vote">
-</form>
+        <div class="panel| panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-arrow-right"></span> {{ question.question_text }}
+                </h3>
+
+            </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {% for choice in question.choice_set.all %}
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label for="choice{{ forloop.counter }}"><input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"> {{ choice.choice_text }}</label>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" class="btn btn-primary btn-sm" value="vote"></input>
+            {% if question.author %}
+                    <strong  class="button">{{ question.author }}</strong>
+                {% endif %}
+
+        </div>
+        </div>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    </form>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,9 +1,12 @@
+{% extends 'polls/index.html' %}
+{% block content %}
 {% if latest_question_list %}
-    <ul>
+    <div class="list-group">
     {% for question in latest_question_list %}
-        <li><a href="{% url 'pollapp:detail' question.id %}">{{ question.question_text }}</a></li>
+        <a href="{% url 'pollapp:detail' question.id %}" class="list-group-item list-group-item-action">{{ question.question_text }}</a>
     {% endfor %}
-    </ul>
+    </div>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}

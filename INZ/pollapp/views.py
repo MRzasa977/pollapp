@@ -5,6 +5,7 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms.models import modelformset_factory
 from ipware import get_client_ip
+from django import forms
 # from .forms import CreateChoiceForm
 from.models import Question
 from django.utils import timezone
@@ -150,7 +151,7 @@ class CreatePoll(LoginRequiredMixin, generic.CreateView):
 
 def createChoice(request, pk):
     question = get_object_or_404(Question, pk=pk)
-    ChoiceFormSet = modelformset_factory(Choice, fields=('choice_text',))
+    ChoiceFormSet = modelformset_factory(Choice, form=forms.CreateChoiceForm,)
     if request.method == 'POST':
         formset = ChoiceFormSet(request.POST, queryset=Choice.objects.filter(question__id=question.id))
         if formset.is_valid():
@@ -158,6 +159,7 @@ def createChoice(request, pk):
             for instance in instances:
                 instance.question_id = question.id
                 instance.save()
+            return HttpResponseRedirect(reverse('pollapp:results', args=(question.id,)))
     else:
         formset = ChoiceFormSet(queryset=Choice.objects.filter(question__id=question.id))
 

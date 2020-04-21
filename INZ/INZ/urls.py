@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from pollapp import views as main
 
 
 urlpatterns = [
@@ -24,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('test/', views.TestPage.as_view(), name='test'),
-    path('thanks/', views.ThanksPage.as_view(), name='thanks')
+    path('thanks/', views.ThanksPage.as_view(), name='thanks', kwargs={'next_page': '/'}),
+    path('', main.IndexView.as_view(), name='index')
     
 ]

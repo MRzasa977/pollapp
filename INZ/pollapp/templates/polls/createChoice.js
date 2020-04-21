@@ -14,3 +14,4 @@ function cloneMore(selector, type) {
     $('#id_' + type + '-TOTAL_FORMS').val(total);
     $(selector).after(newElement);
 }
+

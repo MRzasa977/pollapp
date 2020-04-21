@@ -26,6 +26,14 @@ class CreatePollForm(forms.ModelForm):
     class Meta:
         model = Question
         fields = ('question_text',)
+class CreateChoiceForm(forms.ModelForm):
+    class Meta:
+        model = Choice
+        fields = ['choice_text',]
+        widgets = {
+            'choice_text': forms.TextInput(attrs={ 'class': 'form-control'}),
+        }
+
 
 # class CreateChoiceForm(forms.ModelForm):
 #
